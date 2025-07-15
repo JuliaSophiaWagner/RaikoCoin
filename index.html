@@ -15,17 +15,11 @@
       }
       body {
         font-family: 'Roboto', sans-serif;
+        overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        background-color: #1a103c;
       }
       h1, h2, h3, h4, h5, h6, .font-orbitron {
         font-family: 'Orbitron', sans-serif;
-      }
-      .bg-grid-pink-500\/\[0\.2\] {
-          background-image: linear-gradient(to right, rgb(236 72 153 / 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgb(236 72 153 / 0.1) 1px, transparent 1px);
-          background-size: 2rem 2rem;
-      }
-      .bg-grid-purple-500\/\[0\.1\] {
-          background-image: linear-gradient(to right, rgb(139 92 246 / 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgb(139 92 246 / 0.1) 1px, transparent 1px);
-          background-size: 3rem 3rem;
       }
       @keyframes gradient-animation {
         0% { background-position: 0% 50%; }
@@ -38,48 +32,129 @@
         animation: gradient-animation 30s ease infinite;
       }
 
-      /* Stellaris Starmap Styles */
-      .starmap-bg {
-          background-color: #0c0a1a;
+      @keyframes twinkle {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-1000px, -700px); }
+      }
+      .starfield {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-image: 
+              radial-gradient(1px 1px at 50px 200px, white, transparent),
+              radial-gradient(1px 1px at 100px 50px, white, transparent),
+              radial-gradient(1.5px 1.5px at 200px 80px, white, transparent),
+              radial-gradient(2px 2px at 350px 350px, #DDD, transparent),
+              radial-gradient(1.5px 1.5px at 420px 220px, white, transparent),
+              radial-gradient(1px 1px at 500px 100px, white, transparent);
+          background-repeat: repeat;
+          background-size: 500px 400px;
+      }
+      .starfield-animation {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
           background-image:
-              radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 60%),
-              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239ca3af' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+              radial-gradient(1px 1px at 70px 300px, #FFF, transparent),
+              radial-gradient(1.5px 1.5px at 150px 150px, #FFF, transparent),
+              radial-gradient(1px 1px at 450px 50px, #FFF, transparent);
+          background-repeat: repeat;
+          background-size: 600px 600px;
+          animation: twinkle 150s linear infinite;
       }
-      @keyframes pulse-glow {
-        0%, 100% { box-shadow: 0 0 10px #fff4, 0 0 15px var(--glow-color); }
-        50% { box-shadow: 0 0 20px #ffff, 0 0 30px var(--glow-color), 0 0 40px var(--glow-color); }
+
+      @keyframes twinkle-2 {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-800px, 500px); }
       }
-      .planet-glow {
-        --glow-color: #a855f7; /* Default to purple */
-        animation: pulse-glow 4s infinite ease-in-out;
+      .starfield-animation-2 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image:
+              radial-gradient(1.5px 1.5px at 20px 200px, #FFF, transparent),
+              radial-gradient(2px 2px at 250px 100px, #DDD, transparent),
+              radial-gradient(1.5px 1.5px at 550px 350px, #FFF, transparent);
+          background-repeat: repeat;
+          background-size: 700px 700px;
+          animation: twinkle-2 200s linear infinite;
       }
-      .planet-glow-voting {
-         animation: pulse-glow 2s infinite ease-in-out;
+
+      @keyframes shoot {
+        0% {
+          transform: translateX(-200px) translateY(var(--y-start)) scale(0.5);
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(calc(100vw + 200px)) translateY(var(--y-end)) scale(1);
+          opacity: 0;
+        }
       }
-      
-      /* Story Modal */
-      .modal-backdrop {
-        position: fixed;
+      .shooting-star {
+        position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(10, 5, 30, 0.8);
-        backdrop-filter: blur(8px);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
+        width: 150px;
+        height: 2px;
+        background: linear-gradient(to right, white, transparent);
+        border-radius: 9999px;
+        opacity: 0;
+        animation-name: shoot;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
       }
-      .modal-content {
-        background-color: #1d1440;
-        border: 2px solid #a855f7; /* purple-500 */
-        box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+      
+      @keyframes draw-path {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes draw-path-y {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      .animate-draw-path {
+        stroke-dasharray: 1600;
+        stroke-dashoffset: 1600;
+        animation: draw-path 3s ease-out forwards 0.5s;
+      }
+
+      /* Roadmap glow effect */
+      .roadmap-container:hover .roadmap-glow {
+        opacity: 0.8;
+      }
+      .roadmap-glow {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        filter: blur(10px);
+        transform: scaleY(1.5) translateY(2px);
+      }
+
     </style>
 
-<link rel="stylesheet" href="./assets/index.css">
+<link rel="stylesheet" href="/index.css">
   <script type="importmap">
 {
   "imports": {
@@ -91,11 +166,9 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-C9fOlV9U.js"></script>
+  <script type="module" crossorigin src="/assets/index-C3HAN_Rq.js"></script>
 </head>
   <body>
     <div id="root"></div>
-
-
-</body>
+  </body>
 </html>
