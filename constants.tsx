@@ -69,6 +69,8 @@ export interface Planet {
   status: 'unlocked' | 'voting' | 'locked';
   position: { top: string; left: string; };
   colorClass: string;
+  storyImage?: string;
+  storyText?: string;
 }
 
 export const starmapData: Planet[] = [
@@ -79,6 +81,8 @@ export const starmapData: Planet[] = [
     status: 'unlocked',
     position: { top: '20%', left: '15%' },
     colorClass: 'bg-green-400',
+    storyImage: 'https://images.placeholders.dev/?width=1200&height=800&text=Story%20of%20Plueschia&bgColor=%231a103c&textColor=%23ffffff',
+    storyText: `On Plüschia, everything from the rocks to the rivers is made of the softest fluff. But the silence is unnerving. Legends say a great, unseen guardian watches over the planet's core, a being made of pure cosmic lint. Our first steps here were cautious, every soft footfall echoing in the quiet, fluffy landscape...`,
   },
   {
     id: 'knabberon-9',
