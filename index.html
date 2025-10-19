@@ -975,6 +975,107 @@
 
         }
 
+        .accordion-toggle {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding: 1.5rem 1.75rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .accordion-toggle:focus-visible {
+            outline: 2px solid rgba(184, 160, 130, 0.6);
+            outline-offset: 6px;
+        }
+
+        .accordion-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        [data-accordion-item][data-open="true"] .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1.75rem;
+            border: 1px solid rgba(184, 160, 130, 0.18);
+            box-shadow: 0 18px 38px -28px rgba(49, 49, 51, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accordion-item:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 26px 48px -28px rgba(49, 49, 51, 0.35);
+        }
+
+        .accordion-item[data-open="true"] {
+            box-shadow: 0 30px 55px -26px rgba(49, 49, 51, 0.4);
+        }
+
+        .accordion-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 1.25rem;
+            background: linear-gradient(135deg, #B8A082 0%, #A08968 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 16px 30px -22px rgba(184, 160, 130, 0.8);
+        }
+
+        .accordion-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .accordion-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #A08968;
+        }
+
+        .accordion-subtitle {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(161, 136, 104, 0.75);
+        }
+
+        .accordion-content {
+            padding: 0.75rem 2rem 1.75rem 6rem;
+        }
+
+        .accordion-content p {
+            color: #5c5244;
+        }
+
+        @media (max-width: 768px) {
+            .accordion-toggle {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .accordion-content {
+                padding: 0.75rem 1.5rem 1.5rem 5.25rem;
+            }
+        }
+
     </style>
 
     
@@ -1057,7 +1158,7 @@
                             
                             <a href="#impressions" class="nav-link px-5 py-3 text-gray-700 hover:text-white hover:bg-accent-blue rounded-full transition-all duration-300 font-medium text-sm">Impressionen</a>
 
-                            <a href="#about" class="nav-link px-5 py-3 text-gray-700 hover:text-white hover:bg-accent-blue rounded-full transition-all duration-300 font-medium text-sm">Ãber mich</a>
+                            <a href="#about" class="nav-link px-5 py-3 text-gray-700 hover:text-white hover:bg-accent-blue rounded-full transition-all duration-300 font-medium text-sm">Über mich</a>
 
                         </div>
 
@@ -1249,25 +1350,7 @@ object-position: 50% 30%;
 ">
 
                             <div class="hero-media-inner">
-
-                                <video controls preload="metadata" src="images/film.mp4" alt="Vorstellungsvideo"></video>
-
-                                <div class="hero-media-overlay" style="opacity: 1; pointer-events: auto;">
-
-                                    <div class="hero-play-button">
-
-                                        <svg fill="currentColor" viewBox="0 0 24 24">
-
-                                            <path d="M8 5v14l11-7z"></path>
-
-                                        </svg>
-
-                                    </div>
-
-                                    <p class="hero-video-caption">Vorstellungsvideo</p>
-
-                                </div>
-
+                                <video controls="" preload="metadata" poster="images/FotoVideo.jpg" src="images/film.mp4" alt="Vorstellungsvideo"></video>
                             </div>
 
                         </div>
@@ -1302,7 +1385,7 @@ object-position: 50% 30%;
 
 ">
 
-                    <div class="flex flex-col items-center space-y-6">
+                    <div class="flex flex-col items-center">
 
                         <div class="typewriter-wrapper mx-auto" style="--type-chars: 39;--type-duration: 3.4s;">
 
@@ -1310,7 +1393,9 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <p class="text-2xl text-gray-600 leading-relaxed font-light">...unvergessliche Momente schaffen
+                        <p class="text-2xl text-gray-600 leading-relaxed font-light" style="
+    margin-left: 44%;
+">...unvergessliche Momente schaffen
 
                         </p>
 
@@ -1326,13 +1411,19 @@ object-position: 50% 30%;
 
                         <div class="space-y-6 text-left text-gray-700 text-lg leading-relaxed text-light">
 
-                            <p>Herzlich willkommen bei <span class="text-dark-beige font-medium">Wortglanz</span> â
+                            <p>Herzlich willkommen! <br> 
+Schön, dass ihr da seid.
+<br>
+<br>                             
+Gemeinsam gestalten wir eine Zeremonie, die so einzigartig ist wie eure Geschichte – voller persönlicher Momente, echter Emotionen und liebevoller Details.<br>
+Wir werden zusammen lachen, vielleicht sogar weinen und das Leben feiern mit all seinen Facetten. 
 
-                                eurer freien Traurednerin fÃ¼r besondere Momente voller Liebe, Humor und GÃ¤nsehaut.</p>
+</p>
 
-                            <p>Ich gestalte eure Traumhochzeit oder euer EhejubilÃ¤um ganz nach euren Wünschen â
-
-                                authentisch, persÃ¶nlich und unvergesslich.</p>
+                            <p>Meldet euch gerne bei mir! <br>
+Ich freue mich darauf eure Geschichte in Worte fassen zu dürfen.<br> 
+Eure Sonja
+</p>
 
                             <div style="
 
@@ -1376,9 +1467,7 @@ object-position: 50% 30%;
 
                 <h2 class="text-4xl font-light text-gradient">Lernt mich kennen</h2>
 
-                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">In diesem Video erzÃ¤hle ich euch mehr
-
-                    Ã¶berber mich und meine Leidenschaft fÃ¼r unvergessliche Zeremonien.</p>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">In diesem Video seht ihr, wer hinter den Worten steckt und weshalb meine Reden etwas besonderes sind.</p>
 
             </div>
 
@@ -1398,16 +1487,7 @@ object-position: 50% 30%;
 </style>
 
 <div class="hero-media-inner">
-  <video controls playsinline preload="metadata" class="w-full rounded-[3rem]" src="images/film.mp4" aria-label="Vorstellungsvideo"></video>
-
-  <div class="hero-media-overlay">
-    <div class="hero-play-button">
-      <svg width="56" height="56" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8 5v14l11-7z"></path>
-      </svg>
-    </div>
-    <p class="hero-video-caption">Vorstellungsvideo</p>
-  </div>
+  <video controls="" playsinline="" preload="metadata" class="w-full rounded-[3rem]" poster="images/FotoVideo.jpg" src="images/film.mp4" aria-label="Vorstellungsvideo"></video>
 </div>
 
 
@@ -1441,9 +1521,22 @@ object-position: 50% 30%;
 
        <!-- Audio/Video Samples -->
 
-    <div id="samples" class="mt-5 space-y-8" style="padding-bottom: 3vh;padding-top: 2rem;">
-        <h3 class="text-3xl font-light text-gradient text-center">Hörproben</h3>
-        <div class="grid md:grid-cols-2 gap-8">
+
+        
+
+    <div class="mt-5 space-y-8 gradient-section">
+
+<div id="samples" class="max-w-5xl mx-auto px-4 text-center space-y-10" style="padding-bottom: 3vh;padding-top: 2rem;">
+
+            <div class="space-y-4">
+
+                 <h2 class="text-4xl md:text-5xl lg:text-6xl lg:leading-[1.2] font-light text-gradient mb-6">Hörproben</h2>
+                    <div class="w-64 h-1 gradient-accent mx-auto rounded-full"></div>
+
+                <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">Hier könnt ihr in die Rede zweier Trauungen hineinhören, welche ich bereits geführt habe und euch so einen ersten Eindruck verschaffen.</p>
+            </div>
+
+ <div class="grid md:grid-cols-2 gap-8">
             <div class="glass-effect rounded-[2.5rem] p-8 space-y-5">
                 <h5 class="text-xl font-medium text-dark-beige">Hörprobe 1</h5>
                 <audio controls="" preload="metadata" class="w-full rounded-2xl bg-white/80 border border-white/30 shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-blue/40">
@@ -1469,10 +1562,12 @@ object-position: 50% 30%;
                 </audio>
             </div> -->
         </div>
+</div>
     </div>
     <!-- Weddings Section -->
 
-    <section id="weddings" class="section-padding gradient-section">
+    
+    <section id="weddings" class="section-padding">
 
         <div class="max-w-7xl mx-auto px-4">
 
@@ -1482,7 +1577,7 @@ object-position: 50% 30%;
 
                     Trauungen</h2>
 
-                <div class="w-48 h-1 gradient-accent mx-auto rounded-full"></div>
+                <div class="w-64 h-1 gradient-accent mx-auto rounded-full"></div>
 
             </div>
 
@@ -1492,94 +1587,118 @@ object-position: 50% 30%;
 
                     <p class="text-xl font-light text-dark-beige leading-relaxed">
 
-                        Eure Hochzeit soll einzigartig sein - genau wie eure Liebe. Als freie Traurednerin gestalte ich
-
-                        Zeremonien, die authentisch eure Geschichte erz?fÃ¶hlen.
-
+                        Herzlichen Glückwunsch zur Verlobung! <br>
+                        <br>
+                        <i><strong>Das besondere an einer freien Trauung? Sie kennt keine festen Regeln – nur eure Wünsche zählen.
+Gemeinsam gestalten wir eine Zeremonie, die so individuell ist wie ihr selbst.</strong></i><br><br>
+Ob auf einer verschneiten Berghütte, im heimischen Garten unter funkelnden Lichterketten oder barfuß am Strand: Ich begleite euch dorthin, wo sich eure Liebe zuhause fühlt. 
+Und gemeinsam machen wir diesen Ort zu einer Erinnerung, die bleibt.
+<br><br>Ich nehme euch an die Hand und begleite euch Schritt für Schritt durch die Planung. 
+Dabei möchte ich ganz viel von eurer persönlichen Geschichte wissen, damit am Ende eine Trauung entsteht, die sich wirklich nach euch anfühlt. 
+<br>In der gelacht und geweint werden darf und manchmal sogar beides gleichzeitig.<br><br>Als eure Traurednerin finde ich die Worte, die eure Herzen sprechen – und schaffe mit euch gemeinsam einen Moment, der unvergesslich bleibt.
                     </p>
 
-                    <div class="space-y-6">
+                    <div class="accordion-list">
 
-                        <div class="flex items-start space-x-4 group">
-
-                            <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-
-                                    </path>
-
-                                </svg>
-
+                        <div class="group accordion-item" data-accordion-item="" data-open="false">
+                            <button type="button" class="accordion-toggle" data-accordion-toggle="" aria-expanded="false" aria-controls="weddings-accordion-1">
+                                
+                                <span class="accordion-text" style="
+">
+                                    <span class="accordion-title">Das Kennenlerngespräch</span>
+                                    <span class="accordion-subtitle">Klicken zum Aufklappen</span>
+                                </span>
+                                <span class="accordion-chevron w-6 h-6 flex items-center justify-center flex-shrink-0" style="
+    color: #a08968;
+">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="weddings-accordion-1" class="accordion-content text-gray-700 leading-relaxed hidden" style="
+">
+                                <p>Bevor es losgeht, lernen wir uns persönlich oder per Online-Meeting kennen – völlig unverbindlich. Denn gerade bei so einem besonderen Moment wie eurer Trauung ist das Bauchgefühl entscheidend. 
+Wenn wir merken, dass die Chemie zwischen uns stimmt, dann freue ich mich sehr, gemeinsam mit der Planung eurer individuellen Zeremonie zu starten. 
+</p>
                             </div>
-
-                            <div>
-
-                                <h4 class="text-xl font-medium text-dark-beige mb-2">Pers?fÃ¶nliche Gespr?fÃ¶che</h4>
-
-                                <p class="text-gray-700 leading-relaxed">Wir lernen uns kennen und ich erfahre eure
-
-                                    einzigartige Geschichte</p>
-
-                            </div>
-
                         </div>
 
-                        <div class="flex items-start space-x-4 group">
-
-                            <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
-
-                                    </path>
-
-                                </svg>
-
+                        <div class="group accordion-item" data-accordion-item="" data-open="false">
+                            <button type="button" class="accordion-toggle" data-accordion-toggle="" aria-expanded="false" aria-controls="weddings-accordion-2">
+                                
+                                <span class="accordion-text">
+                                    <span class="accordion-title">Die Rede</span>
+                                    <span class="accordion-subtitle">Klicken zum Aufklappen</span>
+                                </span>
+                                <span class="accordion-chevron text-dark-beige w-6 h-6 flex items-center justify-center flex-shrink-0" style="
+    color: rgb(248 242 236);
+">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" style="color: #a08968;"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="weddings-accordion-2" class="accordion-content text-gray-700 leading-relaxed hidden">
+                                <p>Nachdem wir uns entschieden haben, eure Hochzeit gemeinsam zu planen, lade ich euch zu einem Detailgespräch ein. Zur Vorbereitung erhaltet ihr vor diesem Gespräch einen Fragebogen, den ihr in Ruhe ausfüllen könnt.
+Darin erzählt ihr mir mehr über euch, euer Kennenlernen, eure großen Träume und vielleicht auch die ein oder andere besondere Eigenheit. 
+Aus all diesen Puzzleteilen entsteht dann Schritt für Schritt eure persönliche Rede, mit ganz viel Herz, einer Prise Humor und einem Blick für die kleinen, besonderen Details in eurem Leben. 
+</p>
                             </div>
-
-                            <div>
-
-                                <h4 class="text-xl font-medium text-dark-beige mb-2">Individuelle Zeremonie</h4>
-
-                                <p class="text-gray-700 leading-relaxed">Jede Rede wird speziell f?fÃ¶r euch geschrieben
-
-                                    und auf euch zugeschnitten</p>
-
-                            </div>
-
                         </div>
 
-                        <div class="flex items-start space-x-4 group">
-
-                            <div class="w-12 h-12 gradient-accent rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-
-                                    </path>
-
-                                </svg>
-
+                        <div class="group accordion-item" data-accordion-item="" data-open="false">
+                            <button type="button" class="accordion-toggle" data-accordion-toggle="" aria-expanded="false" aria-controls="weddings-accordion-3">
+                                
+                                <span class="accordion-text">
+                                    <span class="accordion-title">Die Trauung</span>
+                                    <span class="accordion-subtitle">Klicken zum Aufklappen</span>
+                                </span>
+                                <span class="accordion-chevron text-dark-beige w-6 h-6 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="
+    color: #a08968;
+">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="weddings-accordion-3" class="accordion-content text-gray-700 leading-relaxed hidden">
+                                <p>Gemeinsam planen wir den Ablauf eurer freien Trauung – genau so, wie ihr es euch wünscht.
+Ob berührende Rituale, kleine Überraschungen, Lieblingszitate, Gedichte oder Beiträge von Familie und Freunden. Ich unterstütze euch mit Ideen und Erfahrung – und begleite euch am Tag eurer Trauung als Rednerin durch diesen besonderen Moment.<br><br>
+Üblicherweise dauert die Trauung etwa 45 Minuten, doch je nach Anzahl der Musikstücke, Beiträge von Trauzeugen, Eltern oder Freunden und der Rituale kann sie zwischen 30 und 60 Minuten variieren.<br>
+Ob kurz und knackig oder etwas umfangreicher – die Entscheidung liegt ganz bei euch. <br><br>
+Natürlich bin ich auch in der Zeit bis zu eurem großen Tag für euch da – für all eure Fragen, Ideen und Wünsche. Gerne helfe ich auch bei der Suche nach den passenden Dienstleistern. Denn euer Tag soll nicht nur besonders, sondern unvergesslich werden.  
+</p>
                             </div>
-
-                            <div>
-
-                                <h4 class="text-xl font-medium text-dark-beige mb-2">Euer Stil</h4>
-
-                                <p class="text-gray-700 leading-relaxed">Romantisch, humorvoll oder feierlich - ganz
-
-                                    nach euren W?fÃ¶nschen</p>
-
-                            </div>
-
                         </div>
-
+ <div class="group accordion-item" data-accordion-item="" data-open="false">
+                            <button type="button" class="accordion-toggle" data-accordion-toggle="" aria-expanded="false" aria-controls="weddings-accordion-4">
+                                
+                                <span class="accordion-text">
+                                    <span class="accordion-title">Kosten</span>
+                                    <span class="accordion-subtitle">Klicken zum Aufklappen</span>
+                                </span>
+                                <span class="accordion-chevron text-dark-beige w-6 h-6 flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="
+    color: #a08968;
+">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="weddings-accordion-4" class="accordion-content text-gray-700 leading-relaxed hidden">
+                                <p>Ab 850,00 € erhaltet ihr von mir folgendes Angebot: <br> <br>
+•	das Kennenlerngespräch <br>
+•	das Detailgespräch inkl. Fragenbögen <br> 
+•	Betreuung bis zu eurem großen Tag (Telefonisch, What`s App, E-Mail) <br>
+•	die Planung und Gestaltung der Zeremonie <br>
+•	die Trauungs- Urkunden, <br>
+•	das Schreiben und Halten der Rede <br>
+</p>
+                            </div>
+                        </div>
                     </div>
-   <div class="mt-8">
+   <div class=" hidden mt-8">
                         <button onclick="downloadWeddingPDF()" class="inline-flex items-center bg-gradient-to-r from-accent-blue to-accent-blue-dark text-white px-6 py-3 rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -1613,7 +1732,7 @@ object-position: 50% 30%;
 
     <!-- Anniversaries Section -->
 
-    <section id="anniversaries" class="section-padding">
+    <section id="anniversaries" class="section-padding gradient-section">
 
         <div class="max-w-6xl mx-auto px-4">
 
@@ -1623,20 +1742,18 @@ object-position: 50% 30%;
 
                     <h2 class="text-4xl md:text-5xl lg:text-6xl lg:leading-[1.2] font-light text-gradient">
 
-                        EheJubiläen</h2>
+                        Ehejubiläen / Besondere Anlässe</h2>
 
-                    <div class="w-48 h-1 gradient-accent mx-auto rounded-full"></div>
+                    <div class="w-64 h-1 gradient-accent mx-auto rounded-full"></div>
 
                 </div>
 
                 <div class="bg-white/60 border border-white/40 rounded-[3rem] max-w-3xl mx-auto px-10 py-14 shadow-xl text-gray-700 text-lg leading-relaxed">
 
-                    Feiert eure gemeinsame Reise! Ob Silberhochzeit, Goldene Hochzeit oder ein anderes besonderes
-
-                    Jubiläum â ich gestalte eine Zeremonie, die eure jahrelange Liebe und Verbundenheit wÃ¼rdigt. Jeder
-
-                    Jahrestag ist ein Meilenstein, der es verdient, mit den richtigen Worten gefeiert zu werden.
-
+                    Manche Momente im Leben verdienen es, immer wieder gefeiert zu werden – ganz besonders eure gemeinsame Liebe, die mit den Jahren gewachsen ist.<br><br>
+                    Ob Silberhochzeit, Goldene Hochzeit oder ein anderer besonderer Anlass: Ich begleite euch gerne als Rednerin, wenn ihr eure Ehe erneuern oder eure gemeinsamen Jahre mit einer persönlichen Zeremonie feiern möchtet.<br><br>
+                    Denn eine langjährige Partnerschaft ist ein wertvolles Geschenk – voller Erinnerungen, gemeinsamer Erlebnisse und Stärke, die euch durch alle Höhen und Tiefen getragen hat.<br><br>
+Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern. 
                 </div>
 
             </div>
@@ -1645,16 +1762,19 @@ object-position: 50% 30%;
 
     </section>
 
-    <section class="section-padding gradient-section">
+    <section class="section-padding">
 
         <div class="max-w-6xl mx-auto px-4">
 
             <div class="glass-effect rounded-[3rem] px-10 py-14 text-center shadow-2xl space-y-6" style="
 ">
 
-                <h2 class="text-3xl md:text-4xl font-light text-gradient">Ihr seid neugierig geworden?</h2>
+                <h2 class="text-3xl md:text-4xl font-light text-gradient">Ihr seid neugierig geworden? </h2>
 
-                <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">Meldet euch jetzt fÃ¼r ein unverbindliches Kennenlernen â ich freue mich darauf, eure Geschichte zu hÃ¶ren und gemeinsam eure individuelle Zeremonie zu gestalten.</p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">Meldet euch gerne bei mir für ein unverbindliches Kennenlernen. <br> Ich freue mich auf euch! <br><br>
+                Mobil: 0699/19003525 <br>
+Standort: 8292 Neudau, Steiermark 
+</p>
 
                 <div>
 
@@ -1670,7 +1790,7 @@ object-position: 50% 30%;
 
     <!-- Impressions Section -->
 
-    <section id="impressions" class="section-padding ">
+    <section id="impressions" class="section-padding gradient-section">
 
         <div class="max-w-7xl mx-auto px-4">
 
@@ -1680,7 +1800,7 @@ object-position: 50% 30%;
 
                 </h2>
 
-                <div class="w-48 h-1 gradient-accent mx-auto rounded-full"></div>
+                <div class="w-64 h-1 gradient-accent mx-auto rounded-full"></div>
 
             </div>
 
@@ -1690,9 +1810,9 @@ object-position: 50% 30%;
 
                 <div class="impressions-slides-container overflow-hidden rounded-[3rem]">
 
-                    <div class="impressions-slides flex transition-transform duration-700 ease-in-out" style="transform: translateX(-500%);">
+                    <div class="impressions-slides flex transition-transform duration-700 ease-in-out" style="transform: translateX(-200%);">
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1709,7 +1829,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1726,7 +1846,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1743,7 +1863,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1759,7 +1879,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1776,7 +1896,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1792,7 +1912,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1809,7 +1929,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1825,7 +1945,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="impressions-slide w-full md:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="glass-effect rounded-[2rem] overflow-hidden hover-lift group h-full">
 
@@ -1873,7 +1993,7 @@ object-position: 50% 30%;
 
                 <!-- Carousel Dots -->
 
-                <div class="impressions-carousel-dots flex justify-center gap-3 mt-8"><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 active bg-accent-blue"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div></div>
+                <div class="impressions-carousel-dots flex justify-center gap-3 mt-8"><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="impressions-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 active bg-accent-blue"></div></div>
 
             </div>
 
@@ -1881,7 +2001,7 @@ object-position: 50% 30%;
 
         <!-- Customer Reviews -->
 
-        <div class="gradient-section p-12 shadow-lg">
+        <div class="p-12 ">
 
             <h3 class="text-3xl font-light text-gradient text-center mb-12">Was Paare sagen</h3>
 
@@ -1889,9 +2009,9 @@ object-position: 50% 30%;
 
                 <div class="reviews-slides-container overflow-hidden">
 
-                    <div class="reviews-slides flex transition-transform duration-700 ease-in-out" style="transform: translateX(-400%);">
+                    <div class="reviews-slides flex transition-transform duration-700 ease-in-out" style="transform: translateX(-100%);">
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -1933,7 +2053,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -1985,7 +2105,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -2037,7 +2157,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -2089,7 +2209,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -2141,7 +2261,7 @@ object-position: 50% 30%;
 
                         </div>
 
-                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 100%;">
+                        <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
 
                             <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
 
@@ -2231,7 +2351,7 @@ object-position: 50% 30%;
 
                     <!-- Carousel Dots -->
 
-                    <div class="reviews-carousel-dots flex justify-center gap-3 mt-8"><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 active bg-accent-blue"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div></div>
+                    <div class="reviews-carousel-dots flex justify-center gap-3 mt-8"><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 bg-gray-300"></div><div class="reviews-carousel-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-300 hover:bg-accent-blue/50 active bg-accent-blue"></div></div>
 
                 </div>
 
@@ -2249,7 +2369,7 @@ object-position: 50% 30%;
 
     <!-- About Section -->
 
-    <section id="about" class="section-padding gradient-section">
+    <section id="about" class="section-padding">
 
         <div class="max-w-6xl mx-auto px-4">
 
@@ -2327,7 +2447,7 @@ object-position: 50% 30%;
 
     <!-- Footer -->
 
-    <section id="contact" class="section-padding">
+    <section id="contact" class="section-padding gradient-section">
 
         <div class="max-w-7xl mx-auto px-4">
 
@@ -2335,7 +2455,7 @@ object-position: 50% 30%;
 
                 <h2 class="text-4xl md:text-5xl font-light text-gradient">Kontakt</h2>
 
-                <div class="w-32 h-1 gradient-accent mx-auto rounded-full"></div>
+                <div class="w-64 h-1 gradient-accent mx-auto rounded-full"></div>
 
             </div>
 
@@ -2343,13 +2463,9 @@ object-position: 50% 30%;
 
                 <div class="space-y-8 text-left">
 
-                    <h3 class="text-2xl font-light text-gradient">Lasst uns sprechen!</h3>
+                    <h3 class="text-2xl font-light text-gradient"><strong>Ihr seid neugierig geworden?</strong> </h3>
 
-                    <p class="text-gray-600 text-lg leading-relaxed">Ich freue mich darauf, euch kennenzulernen und mehr
-
-                        Ã¼ber eure WÃ¼nsche fÃ¼r euren besonderen Tag zu erfahren. Kontaktiert mich gerne
-
-                        fÃ¼r ein unverbindliches GesprÃ¤ch.</p>
+                    <p class="text-gray-600 text-lg leading-relaxed">Meldet euch gerne bei mir für ein unverbindliches Kennenlernen. <br> Ich freue mich auf euch!  </p>
 
                     <div class="space-y-6">
 
@@ -2375,7 +2491,7 @@ object-position: 50% 30%;
 
                                 <p class="text-dark-beige font-semibold">Telefon</p>
 
-                                <p class="text-gray-700">+43 12345678</p>
+                                <p class="text-gray-700">+43699 19003525 <br> </p>
 
                             </div>
 
@@ -2389,7 +2505,7 @@ object-position: 50% 30%;
 
                                 <p class="text-dark-beige font-semibold">Standort</p>
 
-                                <p class="text-gray-700">Raum Graz und Umgebung</p>
+                                <p class="text-gray-700">8292 Neudau, Steiermark</p>
 
                             </div>
 
@@ -2545,6 +2661,60 @@ object-position: 50% 30%;
 
             });
 
+            const accordionButtons = document.querySelectorAll('[data-accordion-toggle]');
+
+            accordionButtons.forEach((button) => {
+
+                const contentId = button.getAttribute('aria-controls');
+
+                const content = contentId ? document.getElementById(contentId) : null;
+
+                if (!content) {
+
+                    return;
+
+                }
+
+                const item = button.closest('[data-accordion-item]');
+
+                const setOpenState = (isOpen) => {
+
+                    button.setAttribute('aria-expanded', String(isOpen));
+
+                    if (item) {
+
+                        item.dataset.open = isOpen ? 'true' : 'false';
+
+                    }
+
+                    content.classList.toggle('hidden', !isOpen);
+
+                };
+
+                setOpenState(false);
+
+                button.addEventListener('click', () => {
+
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    setOpenState(!isExpanded);
+
+                });
+
+                button.addEventListener('keydown', (event) => {
+
+                    if (event.key === 'Enter' || event.key === ' ') {
+
+                        event.preventDefault();
+
+                        button.click();
+
+                    }
+
+                });
+
+            });
+
         });
 
     </script>
@@ -2569,7 +2739,7 @@ object-position: 50% 30%;
 
                     <p class="text-brown leading-relaxed text-lg max-w-md">
 
-                        Freie Traurednerin f?r unvergessliche Momente voller Liebe, Humor und G?nsehaut.
+                        Freie Traurednerin für unvergessliche Momente voller Liebe, Humor und Gänsehaut.
 
                     </p>
 
@@ -2583,9 +2753,7 @@ object-position: 50% 30%;
 
                         <p>info@wortglanz.at</p>
 
-                        <p>+43 12345678</p>
-
-                        <p>Raum [Eure Stadt]</p>
+                        <p>+43699 19003525</p>
 
                     </div>
 
@@ -2599,9 +2767,9 @@ object-position: 50% 30%;
 
                         <p>Freie Trauungen</p>
 
-                        <p>Ehejubil?en</p>
+                        <p>Ehejubiläen</p>
 
-                        <p>Pers?nliche Beratung</p>
+                        <p>Persönliche Beratung</p>
 
                     </div>
 
@@ -2613,7 +2781,7 @@ object-position: 50% 30%;
 
                 <p class="text-gray-600">
 
-                    ? 2025 Wortglanz. Alle Rechte vorbehalten.
+                    © 2025 Wortglanz. Alle Rechte vorbehalten. 
 
                 </p>
 
@@ -2660,9 +2828,12 @@ object-position: 50% 30%;
 
                     <div>
 
-                        <p>Sonja Zach
+                        <p><strong>Wortglanz</strong><br> Inhaberin: Sonja Zach
+
 <br>
-                            Freie Traurednerin<br>[Eure Adresse]<br>[PLZ Ort]</p>
+                            Freie Traurednerin<br>Siedlung 7<br>
+8292 Neudau<br>
+Österreich</p>
 
                     </div>
 
@@ -2670,7 +2841,7 @@ object-position: 50% 30%;
 
                         <h3 class="text-lg sm:text-xl font-medium text-dark-beige mb-3">Kontakt</h3>
 
-                        <p>Telefon: +43 12345678<br>E-Mail: info@wortglanz.at</p>
+                        <p>Telefon: 0699 19003515<br>E-Mail: info@wortglanz.at</p>
 
                     </div>
 
@@ -2678,11 +2849,9 @@ object-position: 50% 30%;
 
                         <h3 class="text-lg sm:text-xl font-medium text-dark-beige mb-3">Haftungsausschluss</h3>
 
-                        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
-                            Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähtr übernehmen.
-                        Verbraucherstreitbeilegung/Universalschlichtungsstelle
-Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-Verbraucherschlichtungsstelle teilzunehmen.
+                        <p>Unternehmensgegenstand: Freie Rednerin
+                        <br><br>
+                        Kleinunternehmer gemäß § 6 Abs. 1 Nr. 27 UStG
 </p>
 
                     </div>
@@ -3351,10 +3520,11 @@ E-Mail: email@email.at</p>
 
     </script>
 
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98dfa9ea72e45ab9',t:'MTc2MDM2NzE3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98dfa9ea72e45ab9',t:'MTc2MDM2NzE3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
     <iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
 
 <protonpass-root-3a77 data-protonpass-role="root" data-protonpass-theme="os"></protonpass-root-3a77>
+
 </body></html>
