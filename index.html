@@ -21,6 +21,26 @@
 
         }
 
+         .mobile-only {
+            display: none !important;
+        }
+
+        @media (max-width: 767px) {
+            .mobile-only {
+            display: block !important;   
+            }
+        }
+
+         .desktop-only {
+            display: block !important; 
+        }
+
+        @media (max-width: 767px) {
+            .desktop-only {
+            display: none !important;
+            }
+        }
+
         .gradient-hero {
 
             background: linear-gradient(135deg, #FAF8F5 0%, #F5F1EB 30%, rgb(236 229 220) 70%, rgb(184 160 130 / 62%) 100%);
@@ -1126,15 +1146,29 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="flex justify-between items-center h-24">
+            
+
+<div class="flex justify-between items-center h-24">
 
                 <!-- Logo -->
 
-                <div class="flex items-center group cursor-pointer" onclick="scrollToTop()">
+                <div class="flex items-center group cursor-pointer desktop-only" onclick="scrollToTop()">
 
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden transition-transform duration-500 group-hover:scale-105">
 
                         <img src="images/heart.png" alt="Herz Icon" class="w-full h-full object-contain">
+
+                    </div>
+
+                </div><div class="flex items-center group cursor-pointer mobile-only" onclick="scrollToTop()" style="
+    margin-left: 28%;
+">
+
+                    <div class="md:w-16 md:h-16 rounded-2xl flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-105" style="
+    height: 6rem;
+">
+
+                        <img src="images/Wortglanz.png" alt="Herz Icon" class="w-full h-full object-contain">
 
                     </div>
 
@@ -1293,13 +1327,7 @@
 
 ">
 
-                        <img src="images\aboutme-2.jpg" alt="Euer Foto fÃ¼r die Startseite" class="w-full h-full object-cover" style="
-
-    width: 42vh;
-
-    height: 32vh;
-object-position: 50% 30%;
-">
+                        <img src="images\aboutme-2.jpg" alt="Euer Foto fÃ¼r die Startseite" class="w-full h-full object-cover" style="width: 100vh;height: 32vh;object-position: 50% 30%;">
 
                     </div>
 
@@ -1317,37 +1345,17 @@ object-position: 50% 30%;
 
                             </div>
 
-                            <p class="text-base text-gray-600 font-light" style="
-
-    margin-top: -0.3vh;
-
-">...unvergessliche Momente schaffen</p>
+                            <p class="text-base text-gray-600 font-light" style="">...unvergessliche Momente schaffen</p>
 
                         </div>
 
                         <div class="flex justify-center">
 
-                            <div class="" style="
-
-    width: 26vh;
-
-    margin-top: 1vh;
-
-    margin-bottom: -3vh;
-
-">
-
-                                <img src="images\Wortglanz.png" alt="Wortglanz Logo" class="w-full h-auto object-contain drop-shadow-2xl">
-
-                            </div>
+                            
 
                         </div>
 
-                        <div class="hero-media-frame rounded-[2rem]" style="
-
-    margin: 20px 0px 0px 0px;
-
-">
+                        <div class="hero-media-frame rounded-[2rem]" style="margin: 50px 0px 0px 0px;">
 
                             <div class="hero-media-inner">
                                 <video controls="" preload="metadata" poster="images/FotoVideo.jpg" src="images/film.mp4" alt="Vorstellungsvideo"></video>
@@ -2064,7 +2072,7 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                                 </div>
 
-                                <p class="text-gray-800 text-base leading-relaxed mb-6 italic flex-grow">Als Hochzeitssängerin durfte ich bereits viele Trauungen musikalisch begleiten und habe dabei zahlreiche schöne Moment erlebt. Für unsere eigene Hochzeit haben wir uns ganz bewusst für die liebe Sonja entschieden. Uns war wichtig, jemanden an unserer Seite zu haben, der auf unserer Wellenlänge ist- und was soll ich sagen: Sonja hat all unsere Erwartungen übertroffen. Schon beim ersten Gespräch war uns klar, dass sie die perfekte Wahl für uns ist. Die Sympathie war sofort da und wir haben uns auf Anhieb großartig verstanden. Die Zeremonie war einfach wundervoll- voller Lachen, ein paar Tränen der Rührung und ganz viel Liebe. Wir können Sonja wirklich jedem ans Herz legen, der sich eine persönliche und keine 0815- Trauung wünscht.  </p>
+                                <p class="text-gray-800 text-base leading-relaxed mb-6 italic flex-grow">Herzlichen Dank für die einfühlsame und schöne Zeremonie. Im Namen meiner Frau, der Beistände und Freunde bedanke ich mich sehr herzlich bei dir. Deine Rede hat uns alle unglaublich berührt. </p>
 
                                 <div class="flex items-center">
 
@@ -2072,7 +2080,7 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                                         <div class="w-full h-full gradient-accent flex items-center justify-center">
 
-                                            <span class="text-white/60 text-xs font-light">N&amp;C</span>
+                                            <span class="text-white/60 text-xs font-light">H&amp;W</span>
 
                                         </div>
 
@@ -2080,7 +2088,7 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                                     <div>
 
-                                        <footer class="text-accent-blue font-semibold">Nina &amp; Christian</footer>
+                                        <footer class="text-accent-blue font-semibold">Harry &amp; Wisarat</footer>
 
                                         
 
@@ -2230,7 +2238,51 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                         </div>
 
-                        
+                         <div class="reviews-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 p-2 md:p-4" style="flex: 0 0 33.3333%;">
+
+                            <div class="bg-white/60 rounded-[2rem] p-6 border border-white/30 shadow-lg card-hover h-full flex flex-col">
+
+                                <div class="star-rating justify-center mb-4">
+
+                                    <div class="star"></div>
+
+                                    <div class="star"></div>
+
+                                    <div class="star"></div>
+
+                                    <div class="star"></div>
+
+                                    <div class="star"></div>
+
+                                </div>
+
+                                <p class="text-gray-800 text-base leading-relaxed mb-6 italic flex-grow">Wir haben uns bewusst für die liebe Sonja entschieden und was soll ich sagen, sie hat all unsere Erwartungen übertroffen. Die Zeremonie war persönlich, emotion und voller Liebe - einfach unvergesslich!  </p>
+
+                                <div class="flex items-center">
+
+                                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg border-2 border-white mr-3">
+
+                                        <div class="w-full h-full gradient-accent flex items-center justify-center">
+
+                                            <span class="text-white/60 text-xs font-light">L&amp;S</span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+
+                                        <footer class="text-accent-blue font-semibold">Lisa &amp; Stefan</footer>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -2287,7 +2339,26 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
     
 
     <!-- About Section -->
+<style>
+    .image-aboutme-container {
+  position: relative;
+  display: inline-block;
+}
 
+.image-aboutme-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.text-aboutme-overlay {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 34px;
+    font-weight: 500;
+}
+</style>
     <section id="about" class="section-padding">
 
         <div class="max-w-6xl mx-auto px-4">
@@ -2296,12 +2367,14 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                 <div class="relative">
 
-                    <div class="rounded-[3rem] overflow-hidden shadow-2xl border border-white/60 bg-white relative">
+                    <div class="rounded-[3rem] overflow-hidden shadow-2xl border border-white/60 bg-white relative image-aboutme-container">
 
-                        <img src="images\aboutme-2.jpg" alt="Sonja Zach haelt eine Traurede" class="w-full h-full object-cover">
+                        <img src="images\Screenshot_20240822_194145_Chrome.jpg" alt="Sonja Zach haelt eine Traurede" class="w-full h-full object-cover">
 
                         <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/5"></div>
-
+<div class="text-aboutme-overlay  font-light text-gradient text-center">
+Über mich
+</div>
                     </div>
 
                 </div>
@@ -2310,14 +2383,14 @@ Lasst uns gemeinsam diesen besonderen Tag gestalten und eure Liebe feiern.
 
                     <div class="space-y-5 text-gray-700 text-lg leading-relaxed">
 
-                        <p class="text-l tracking-[0.4em] uppercase text-accent-blue">Wieso ich freie Traurednerin geworden bin?</p>
+                        <p class="text-l tracking-[0.2em] uppercase text-accent-blue">Wieso ich freie Traurednerin geworden bin?</p>
 
                         <p>
 Hauptberuflich arbeite ich als Standesbeamtin und durfte bereits einigen Paaren auf ihrem Weg ins gemeinsame Leben begleiten. <br> 
 Jedes „Ja“-Wort, jedes Lächeln und jede persönliche Geschichte hat in mir den Wunsch erweckt, diesen Momenten noch mehr Raum zu geben. So habe ich den Entschluss gefasst, meinen eigenen Weg zu gehen- als freie Traurednerin, die jedes Paar feiert, wie es wirklich ist.  Als kleines Mädchen habe ich mir immer meine eigene Traumhochzeit ausgemalt und als freie Traurednerin ist es mir möglich nicht nur eine sondern viele Traumhochzeiten erleben und mitgestalten zu dürfen.   
 <br>
 
-                        </p><p class="text-l tracking-[0.4em] uppercase text-accent-blue">Und wie schaut meine Freizeit aus?</p>
+                        </p><p class="text-l tracking-[0.2em] uppercase text-accent-blue">Und wie schaut meine Freizeit aus?</p>
  
   <br>
 
@@ -2366,7 +2439,6 @@ Ich liebe das Leben und genieße die kleinen und großen Momente, die es so spü
 
     </section>
 
-    <!-- Footer -->
 
     <section id="contact" class="section-padding gradient-section">
 
@@ -2483,7 +2555,40 @@ Ich liebe das Leben und genieße die kleinen und großen Momente, die es so spü
         </div>
 
     </section>
-
+ <section class="py-16 md:py-20 bg-gradient-to-br from-warm-beige to-soft-beige">
+   <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl md:text-4xl lg:text-5xl font-light text-gradient mb-4">Partner</h2>
+     <div class="w-32 h-1 gradient-accent mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"><!-- Partner 1 -->
+     <div class="glass-effect rounded-3xl hover-lift group">
+      <div class="aspect-square flex items-center justify-center"><img src="images/Palaiskneissl.jpg" alt="Partner Palais Kneissl" class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-full h-full bg-gradient-to-br from-accent-blue/20 to-accent-blue/10 rounded-2xl flex items-center justify-center" style="display: flex;">
+       </div>
+      </div>
+     </div><!-- Partner 2 -->
+     <div class="glass-effect rounded-3xl hover-lift group">
+      <div class="aspect-square flex items-center justify-center"><img src="images/BildmacherinFotografie.jpg" alt="Partner Bildmacherin Fotografie" class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-full h-full bg-gradient-to-br from-accent-blue/20 to-accent-blue/10 rounded-2xl flex items-center justify-center" style="display: flex;">
+       </div>
+      </div>
+     </div><!-- Partner 3 -->
+     <div class="glass-effect rounded-3xl hover-lift group">
+      <div class="aspect-square flex items-center justify-center"><img src="images/Feinerfotografie.jpg" alt="Partner Feiner Fotografie" class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-full h-full bg-gradient-to-br from-accent-blue/20 to-accent-blue/10 rounded-2xl flex items-center justify-center" style="display: flex;">
+       </div>
+      </div>
+     </div><!-- Partner 4 -->
+     <div class="glass-effect rounded-3xl hover-lift group">
+      <div class="aspect-square flex items-center justify-center"><img src="images/Ninasieglsängerin.jpg" alt="Partner Nina Siegl Sängerin" class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-full h-full bg-gradient-to-br from-accent-blue/20 to-accent-blue/10 rounded-2xl flex items-center justify-center" style="display: flex;">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -3441,7 +3546,7 @@ E-Mail: email@email.at</p>
 
     </script>
 
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98dfa9ea72e45ab9',t:'MTc2MDM2NzE3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'98dfa9ea72e45ab9',t:'MTc2MDM2NzE3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
     <iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
